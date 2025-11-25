@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anker SOLIX - 便携式储能电源专家 | 优化版首页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-gradient: linear-gradient(135deg, #2c7ed0 0%, #00db84 100%);
+            --primary-blue: #2c7ed0;
+            --primary-green: #00db84;
+            --dark-bg: #0a0a0a;
+            --gray-bg: #1a1a1a;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --accent-orange: #ff6b35;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* 导航栏 */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 5%;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .navbar-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-green);
+        }
+
+        /* Hero Section - 黑五促销 + 信任背书 */
+        .hero {
+            margin-top: 70px;
+            position: relative;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+            padding: 4rem 5% 3rem;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: var(--primary-gradient);
+            opacity: 0.1;
+            clip-path: polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%);
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .promo-badge {
+            display: inline-block;
+            background: var(--accent-orange);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-title .highlight {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--primary-gradient);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 219, 132, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--dark-bg);
+        }
+
+        /* 信任背书 */
+        .trust-badges {
+            display: flex;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .trust-item {
+            text-align: center;
+        }
+
+        .trust-number {
+            font-size: 2rem;
+            font-weight: 700;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .trust-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* 计算器模块 - 关键优化！前置到第2屏 */
+        .calculator-section {
+            padding: 5rem 5%;
+            background: var(--gray-bg);
+            position: relative;
+        }
+
+        .calculator-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-gradient);
+            opacity: 0.05;
+        }
+
+        .section-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: rgba(0, 219, 132, 0.2);
+            color: var(--primary-green);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* 计算器卡片 */
+        .calculator-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 3rem;
+            backdrop-filter: blur(10px);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .calculator-step {
+            margin-bottom: 2rem;
+        }
+
+        .step-label {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .step-number {
+            width: 30px;
+            height: 30px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+
+        .device-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 1rem;
+        }
+
+        .device-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid transparent;
+            border-radius: 12px;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .device-item:hover {
+            border-color: var(--primary-green);
+            transform: translateY(-3px);
+        }
+
+        .device-item.selected {
+            border-color: var(--primary-green);
+            background: rgba(0, 219, 132, 0.1);
+        }
+
+        .device-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .device-name {
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .device-power {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+
+        .calculator-result {
+            background: var(--primary-gradient);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+            display: none;
+        }
+
+        .calculator-result.show {
+            display: block;
+            animation: slideIn 0.5s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .result-time {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .result-label {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .result-recommendation {
+            font-size: 1rem;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .recommended-product {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            margin-top: 1rem;
+            font-weight: 600;
+        }
+
+        /* 产品推荐区 - 简化版 */
+        .products-section {
+            padding: 5rem 5%;
+            background: var(--dark-bg);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .product-card {
+            background: var(--gray-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-green);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--accent-orange);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-specs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .spec-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        .spec-icon {
+            color: var(--primary-green);
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .product-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-green);
+        }
+
+        .price-original {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            text-decoration: line-through;
+            margin-left: 0.5rem;
+        }
+
+        /* 场景应用区 - 前置优化 */
+        .scenarios-section {
+            padding: 5rem 5%;
+            background: var(--gray-bg);
+        }
+
+        .scenarios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .scenario-card {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            height: 400px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .scenario-card:hover {
+            transform: scale(1.03);
+        }
+
+        .scenario-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #2c7ed0, #00db84);
+            opacity: 0.2;
+        }
+
+        .scenario-card:nth-child(1) .scenario-bg {
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+        }
+
+        .scenario-card:nth-child(2) .scenario-bg {
+            background: linear-gradient(135deg, #2c7ed0, #5e60ce);
+        }
+
+        .scenario-card:nth-child(3) .scenario-bg {
+            background: linear-gradient(135deg, #00db84, #2c7ed0);
+        }
+
+        .scenario-content {
+            position: relative;
+            height: 100%;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+        }
+
+        .scenario-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .scenario-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .scenario-desc {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .scenario-link {
+            color: var(--primary-green);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* 品牌优势 */
+        .features-section {
+            padding: 5rem 5%;
+            background: var(--dark-bg);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* 用户评价 */
+        .reviews-section {
+            padding: 5rem 5%;
+            background: var(--gray-bg);
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .review-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+        }
+
+        .review-stars {
+            color: #ffd700;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .review-text {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .review-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        .author-info {
+            flex: 1;
+        }
+
+        .author-name {
+            font-weight: 600;
+        }
+
+        .author-date {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* 页脚 */
+        .footer {
+            background: var(--dark-bg);
+            padding: 3rem 5% 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-green);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .trust-badges {
+                flex-wrap: wrap;
+                gap: 1.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .calculator-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .device-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="navbar-content">
+            <div class="logo">ANKER SOLIX</div>
+            <ul class="nav-links">
+                <li><a href="#products">产品</a></li>
+                <li><a href="#calculator">选型工具</a></li>
+                <li><a href="#scenarios">应用场景</a></li>
+                <li><a href="#support">支持</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero区 - 黑五促销 + 信任背书 -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="promo-badge">🔥 黑色星期五 | 11月20日-27日</span>
+            <h1 class="hero-title">
+                最高享受 <span class="highlight">45% 折扣</span><br>
+                为您的生活注入持久电力
+            </h1>
+            <p class="hero-subtitle">
+                Anker SOLIX - 领先的便携式储能解决方案，让每一次户外旅行、应急备电都充满信心
+            </p>
+            <div class="hero-cta">
+                <a href="#calculator" class="btn btn-primary">立即选型</a>
+                <a href="#products" class="btn btn-secondary">浏览产品</a>
+            </div>
+
+            <!-- 信任背书 -->
+            <div class="trust-badges">
+                <div class="trust-item">
+                    <div class="trust-number">300万+</div>
+                    <div class="trust-label">全球用户信赖</div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-number">4.8/5.0</div>
+                    <div class="trust-label">用户评分</div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-number">100+</div>
+                    <div class="trust-label">国家和地区</div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-number">10年+</div>
+                    <div class="trust-label">电源技术沉淀</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 计算器模块 - 核心优化：前置到第2屏！ -->
+    <section id="calculator" class="calculator-section">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-badge">⚡ 智能选型工具</span>
+                <h2 class="section-title">不知道买多大？30秒找到适合你的型号</h2>
+                <p class="section-subtitle">
+                    告诉我们您的用电需求，我们会为您推荐最合适的储能电源
+                </p>
+            </div>
+
+            <div class="calculator-card">
+                <div class="calculator-step">
+                    <div class="step-label">
+                        <span class="step-number">1</span>
+                        选择您需要供电的设备
+                    </div>
+                    <div class="device-grid">
+                        <div class="device-item" data-power="150" data-name="冰箱">
+                            <div class="device-icon">🧊</div>
+                            <div class="device-name">冰箱</div>
+                            <div class="device-power">~150W</div>
+                        </div>
+                        <div class="device-item" data-power="100" data-name="笔记本电脑">
+                            <div class="device-icon">💻</div>
+                            <div class="device-name">笔记本</div>
+                            <div class="device-power">~100W</div>
+                        </div>
+                        <div class="device-item" data-power="50" data-name="手机">
+                            <div class="device-icon">📱</div>
+                            <div class="device-name">手机</div>
+                            <div class="device-power">~50W</div>
+                        </div>
+                        <div class="device-item" data-power="80" data-name="照明灯">
+                            <div class="device-icon">💡</div>
+                            <div class="device-name">照明</div>
+                            <div class="device-power">~80W</div>
+                        </div>
+                        <div class="device-item" data-power="1200" data-name="电热水壶">
+                            <div class="device-icon">☕</div>
+                            <div class="device-name">电水壶</div>
+                            <div class="device-power">~1200W</div>
+                        </div>
+                        <div class="device-item" data-power="500" data-name="电风扇">
+                            <div class="device-icon">🌀</div>
+                            <div class="device-name">电风扇</div>
+                            <div class="device-power">~500W</div>
+                        </div>
+                        <div class="device-item" data-power="40" data-name="路由器">
+                            <div class="device-icon">📡</div>
+                            <div class="device-name">路由器</div>
+                            <div class="device-power">~40W</div>
+                        </div>
+                        <div class="device-item" data-power="200" data-name="投影仪">
+                            <div class="device-icon">📽️</div>
+                            <div class="device-name">投影仪</div>
+                            <div class="device-power">~200W</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calculator-step">
+                    <div class="step-label">
+                        <span class="step-number">2</span>
+                        预期使用时长
+                    </div>
+                    <select id="duration" style="width: 100%; padding: 1rem; border-radius: 10px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.2); color: white; font-size: 1rem;">
+                        <option value="4">4小时 - 短途出行</option>
+                        <option value="8" selected>8小时 - 日常使用</option>
+                        <option value="12">12小时 - 长时间备电</option>
+                        <option value="24">24小时 - 应急备用</option>
+                        <option value="48">48小时 - 长途旅行</option>
+                    </select>
+                </div>
+
+                <button class="btn btn-primary" onclick="calculatePower()" style="width: 100%; margin-top: 2rem;">
+                    💡 计算推荐型号
+                </button>
+
+                <div id="result" class="calculator-result">
+                    <div class="result-time" id="resultCapacity">2400Wh</div>
+                    <div class="result-label">推荐电池容量</div>
+                    <p id="resultDesc">基于您选择的设备，我们推荐以下产品：</p>
+                    <div class="result-recommendation">
+                        <div class="recommended-product" id="recommendedProduct">
+                            ⚡ Anker SOLIX C2000
+                        </div>
+                    </div>
+                    <button class="btn btn-secondary" onclick="window.location.href='#products'" style="margin-top: 1.5rem; background: rgba(255, 255, 255, 0.2);">
+                        查看详细信息
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 产品推荐区 - 简化为3款核心产品 -->
+    <section id="products" class="products-section">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-badge">🔋 核心产品系列</span>
+                <h2 class="section-title">为每种场景精心打造</h2>
+                <p class="section-subtitle">
+                    从便携露营到家庭备电，总有一款适合您
+                </p>
+            </div>
+
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <span>🔋</span>
+                        <div class="product-badge">-40% OFF</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">C1000 Gen 2</h3>
+                        <p class="product-desc">便携基础款 - 周末露营首选</p>
+                        <div class="product-specs">
+                            <div class="spec-item">
+                                <span class="spec-icon">⚡</span>
+                                <span>1056Wh容量</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-icon">🔌</span>
+                                <span>1800W输出</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-icon">⏱️</span>
+                                <span>43分钟快充</span>
+                            </div>
+                        </div>
+                        <div class="product-footer">
+                            <div>
+                                <span class="product-price">$599</span>
+                                <span class="price-original">$999</span>
+                            </div>
+                            <button class="btn btn-primary" style="padding: 0.75rem 1.5rem;">立即购买</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <span>⚡</span>
+                        <div class="product-badge">-45% OFF 🔥</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">C2000 Gen 2</h3>
+                        <p class="product-desc">性能均衡款 - 多场景通用</p>
+                        <div class="product-specs">
+                            <div class="spec-item">
+                                <span class="spec-icon">⚡</span>
+                                <span>2112Wh容量</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-icon">🔌</span>
+                                <span>2400W输出</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-icon">⏱️</span>
+                                <span>32小时冰箱供电</span>
+                            </div>
+                        </div>
+                        <div class="product-footer">
+                            <div>
+                                <span class="product-price">$879</span>
+                                <span class="price-original">$1599</span>
+                            </div>
+                            <button class="btn btn-primary" style="padding: 0.75rem 1.5rem;">立即购买</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <span>🏠</span>
+                        <div class="product-badge">-35% OFF</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">F3800 Plus</h3>
+                        <p class="product-desc">家庭备电专业版 - 240V即插即用</p>
+                        <div class="product-specs">
+                            <div class="spec-item">
+                                <span class="spec-icon">⚡</span>
+                                <span>3840Wh容量</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-icon">🔌</span>
+                                <span>6000W输出</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-icon">🏠</span>
+                                <span>全屋备电</span>
+                            </div>
+                        </div>
+                        <div class="product-footer">
+                            <div>
+                                <span class="product-price">$2,599</span>
+                                <span class="price-original">$3,999</span>
+                            </div>
+                            <button class="btn btn-primary" style="padding: 0.75rem 1.5rem;">立即购买</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 场景应用区 - 前置优化 -->
+    <section id="scenarios" class="scenarios-section">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-badge">🌍 应用场景</span>
+                <h2 class="section-title">无论何时何地，持久供电</h2>
+                <p class="section-subtitle">
+                    探索Anker SOLIX如何为您的生活方式赋能
+                </p>
+            </div>
+
+            <div class="scenarios-grid">
+                <div class="scenario-card">
+                    <div class="scenario-bg"></div>
+                    <div class="scenario-content">
+                        <div class="scenario-icon">🏕️</div>
+                        <h3 class="scenario-title">户外露营</h3>
+                        <p class="scenario-desc">
+                            为您的露营装备供电，享受野外的宁静与舒适
+                        </p>
+                        <a href="#" class="scenario-link">
+                            探索更多 →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="scenario-card">
+                    <div class="scenario-bg"></div>
+                    <div class="scenario-content">
+                        <div class="scenario-icon">🚐</div>
+                        <h3 class="scenario-title">房车生活</h3>
+                        <p class="scenario-desc">
+                            为您的移动之家提供持久电力，自由探索世界
+                        </p>
+                        <a href="#" class="scenario-link">
+                            探索更多 →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="scenario-card">
+                    <div class="scenario-bg"></div>
+                    <div class="scenario-content">
+                        <div class="scenario-icon">🏠</div>
+                        <h3 class="scenario-title">家庭备电</h3>
+                        <p class="scenario-desc">
+                            应对突发停电，保障家庭设备正常运转
+                        </p>
+                        <a href="#" class="scenario-link">
+                            探索更多 →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 品牌优势 -->
+    <section class="features-section">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-badge">✨ 为什么选择SOLIX</span>
+                <h2 class="section-title">领先技术，值得信赖</h2>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🔋</div>
+                    <h3 class="feature-title">LiFePO4电池</h3>
+                    <p class="feature-desc">
+                        3000+循环寿命，比传统电池更耐用、更安全
+                    </p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">快速充电</h3>
+                    <p class="feature-desc">
+                        最快43分钟充满，不让等待阻挡您的计划
+                    </p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📱</div>
+                    <h3 class="feature-title">智能App控制</h3>
+                    <p class="feature-desc">
+                        实时监控电量、远程控制，一切尽在掌握
+                    </p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🔌</div>
+                    <h3 class="feature-title">多端口输出</h3>
+                    <p class="feature-desc">
+                        AC/DC/USB-C多种接口，同时为多设备供电
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 用户评价 -->
+    <section class="reviews-section">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-badge">💬 用户评价</span>
+                <h2 class="section-title">听听真实用户的声音</h2>
+            </div>
+
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">
+                        "去年夏天的台风停电，Anker SOLIX救了我们全家！冰箱、照明、手机充电都靠它，坚持了整整两天。现在它是我们家必备的应急装备。"
+                    </p>
+                    <div class="review-author">
+                        <div class="author-avatar">李</div>
+                        <div class="author-info">
+                            <div class="author-name">李女士</div>
+                            <div class="author-date">2024年10月</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">
+                        "作为一个露营爱好者，C2000是我的最佳伙伴。轻便但功率足够，电热水壶、电饭煲都能用。充电也很快，太阳能板配合使用简直完美！"
+                    </p>
+                    <div class="review-author">
+                        <div class="author-avatar">张</div>
+                        <div class="author-info">
+                            <div class="author-name">张先生</div>
+                            <div class="author-date">2024年9月</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">
+                        "房车改装后一直在寻找合适的电源方案，F3800完美解决了我的需求。240V输出可以带动空调，续航也给力。Anker品牌值得信赖！"
+                    </p>
+                    <div class="review-author">
+                        <div class="author-avatar">王</div>
+                        <div class="author-info">
+                            <div class="author-name">王先生</div>
+                            <div class="author-date">2024年11月</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>产品</h4>
+                <ul class="footer-links">
+                    <li><a href="#">便携电源</a></li>
+                    <li><a href="#">太阳能板</a></li>
+                    <li><a href="#">家庭备电</a></li>
+                    <li><a href="#">配件</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>支持</h4>
+                <ul class="footer-links">
+                    <li><a href="#">帮助中心</a></li>
+                    <li><a href="#">产品注册</a></li>
+                    <li><a href="#">保修政策</a></li>
+                    <li><a href="#">联系我们</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>关于</h4>
+                <ul class="footer-links">
+                    <li><a href="#">公司介绍</a></li>
+                    <li><a href="#">新闻中心</a></li>
+                    <li><a href="#">合作伙伴</a></li>
+                    <li><a href="#">招聘</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>关注我们</h4>
+                <ul class="footer-links">
+                    <li><a href="#">微信公众号</a></li>
+                    <li><a href="#">微博</a></li>
+                    <li><a href="#">抖音</a></li>
+                    <li><a href="#">B站</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Anker SOLIX. All rights reserved. | 隐私政策 | 使用条款</p>
+        </div>
+    </footer>
+
+    <script>
+        // 计算器功能
+        let selectedDevices = [];
+
+        document.querySelectorAll('.device-item').forEach(item => {
+            item.addEventListener('click', function() {
+                this.classList.toggle('selected');
+            });
+        });
+
+        function calculatePower() {
+            const selected = document.querySelectorAll('.device-item.selected');
+            const duration = parseInt(document.getElementById('duration').value);
+
+            if (selected.length === 0) {
+                alert('请至少选择一个设备');
+                return;
+            }
+
+            let totalPower = 0;
+            let deviceNames = [];
+
+            selected.forEach(device => {
+                totalPower += parseInt(device.dataset.power);
+                deviceNames.push(device.dataset.name);
+            });
+
+            const requiredCapacity = Math.ceil((totalPower * duration) / 1000) * 1000;
+
+            let recommendedProduct = '';
+            if (requiredCapacity <= 1100) {
+                recommendedProduct = '⚡ Anker SOLIX C1000 Gen 2';
+            } else if (requiredCapacity <= 2200) {
+                recommendedProduct = '⚡ Anker SOLIX C2000 Gen 2';
+            } else {
+                recommendedProduct = '⚡ Anker SOLIX F3800 Plus';
+            }
+
+            document.getElementById('resultCapacity').textContent = requiredCapacity + 'Wh';
+            document.getElementById('resultDesc').textContent =
+                `为${deviceNames.join('、')}供电${duration}小时，需要约${requiredCapacity}Wh容量`;
+            document.getElementById('recommendedProduct').textContent = recommendedProduct;
+            document.getElementById('result').classList.add('show');
+
+            // 平滑滚动到结果
+            document.getElementById('result').scrollIntoView({
+                behavior: 'smooth',
+                block: 'nearest'
+            });
+        }
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
