@@ -1,0 +1,1471 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anker SOLIX - Portable Power Station Expert | Optimized Homepage</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-gradient: linear-gradient(135deg, #2c7ed0 0%, #00db84 100%);
+            --primary-blue: #2c7ed0;
+            --primary-green: #00db84;
+            --dark-bg: #0a0a0a;
+            --gray-bg: #1a1a1a;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --accent-orange: #ff6b35;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* 导航栏 */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 5%;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .navbar-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-green);
+        }
+
+        /* Hero Section - 黑五促销 + 信任背书 */
+        .hero {
+            margin-top: 70px;
+            position: relative;
+            background: #000000;
+            padding: 4rem 5% 3rem;
+            overflow: hidden;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+        }
+
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            gap: 5rem;
+            align-items: center;
+            width: 100%;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            position: relative;
+            padding-right: 0;
+        }
+
+        .hero-image img {
+            max-width: 120%;
+            height: auto;
+            animation: float 6s ease-in-out infinite;
+            position: relative;
+            mix-blend-mode: screen;
+            filter: brightness(1.1) contrast(1.2);
+            mask: radial-gradient(ellipse 85% 85% at center,
+                black 50%,
+                rgba(0,0,0,0.95) 70%,
+                rgba(0,0,0,0.8) 80%,
+                rgba(0,0,0,0.5) 90%,
+                rgba(0,0,0,0.2) 95%,
+                transparent 100%);
+            -webkit-mask: radial-gradient(ellipse 85% 85% at center,
+                black 50%,
+                rgba(0,0,0,0.95) 70%,
+                rgba(0,0,0,0.8) 80%,
+                rgba(0,0,0,0.5) 90%,
+                rgba(0,0,0,0.2) 95%,
+                transparent 100%);
+        }
+
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            left: -7%;
+            right: -13%;
+            bottom: -10%;
+            background: radial-gradient(ellipse 70% 70% at center,
+                transparent 40%,
+                rgba(0,0,0,0.1) 60%,
+                rgba(0,0,0,0.3) 80%,
+                rgba(0,0,0,0.7) 90%,
+                #000000 100%);
+            pointer-events: none;
+            z-index: -1;
+            transform: translateX(3rem);
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateX(3rem) translateY(0px) scale(1);
+            }
+            50% {
+                transform: translateX(3rem) translateY(-10px) scale(1.02);
+            }
+        }
+
+
+        .promo-badge {
+            display: inline-block;
+            background: var(--accent-orange);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-title .highlight {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--primary-gradient);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 219, 132, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--dark-bg);
+        }
+
+        /* 信任背书 */
+        .trust-badges {
+            display: flex;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .trust-item {
+            text-align: center;
+        }
+
+        .trust-number {
+            font-size: 2rem;
+            font-weight: 700;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .trust-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* 计算器模块 - 关键优化！前置到第2屏 */
+        .calculator-section {
+            padding: 5rem 5%;
+            background: var(--gray-bg);
+            position: relative;
+        }
+
+        .calculator-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-gradient);
+            opacity: 0.05;
+        }
+
+        .section-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: rgba(0, 219, 132, 0.2);
+            color: var(--primary-green);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* 计算器卡片 */
+        .calculator-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 3rem;
+            backdrop-filter: blur(10px);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .calculator-step {
+            margin-bottom: 2rem;
+        }
+
+        .step-label {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .step-number {
+            width: 30px;
+            height: 30px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+
+        .device-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 1rem;
+        }
+
+        .device-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid transparent;
+            border-radius: 12px;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .device-item:hover {
+            border-color: var(--primary-green);
+            transform: translateY(-3px);
+        }
+
+        .device-item.selected {
+            border-color: var(--primary-green);
+            background: rgba(0, 219, 132, 0.1);
+        }
+
+        .device-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .device-name {
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .device-power {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+
+        .calculator-result {
+            background: var(--primary-gradient);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+            display: none;
+        }
+
+        .calculator-result.show {
+            display: block;
+            animation: slideIn 0.5s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .result-time {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .result-label {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .result-recommendation {
+            font-size: 1rem;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .recommended-product {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            margin-top: 1rem;
+            font-weight: 600;
+        }
+
+        /* 产品推荐区 - 简化版 */
+        .products-section {
+            padding: 5rem 5%;
+            background: var(--dark-bg);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .product-card {
+            background: var(--gray-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-green);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--accent-orange);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-specs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .spec-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        .spec-icon {
+            color: var(--primary-green);
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .product-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-green);
+        }
+
+        .price-original {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            text-decoration: line-through;
+            margin-left: 0.5rem;
+        }
+
+        /* 场景应用区 - 前置优化 */
+        .scenarios-section {
+            padding: 5rem 5%;
+            background: var(--gray-bg);
+        }
+
+        .scenarios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .scenario-card {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            height: 400px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .scenario-card:hover {
+            transform: scale(1.03);
+        }
+
+        .scenario-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #2c7ed0, #00db84);
+            opacity: 0.2;
+        }
+
+        .scenario-card:nth-child(1) .scenario-bg {
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+        }
+
+        .scenario-card:nth-child(2) .scenario-bg {
+            background: linear-gradient(135deg, #2c7ed0, #5e60ce);
+        }
+
+        .scenario-card:nth-child(3) .scenario-bg {
+            background: linear-gradient(135deg, #00db84, #2c7ed0);
+        }
+
+        .scenario-content {
+            position: relative;
+            height: 100%;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+        }
+
+        .scenario-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .scenario-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .scenario-desc {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .scenario-link {
+            color: var(--primary-green);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* 品牌优势 */
+        .features-section {
+            padding: 5rem 5%;
+            background: var(--dark-bg);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* PR背书 */
+        .press-section {
+            padding: 5rem 5%;
+            background: var(--gray-bg);
+        }
+
+        .press-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .press-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .press-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-green);
+        }
+
+        .press-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .press-logo {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-gradient);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .press-info {
+            flex: 1;
+        }
+
+        .press-source {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .press-type {
+            font-size: 0.85rem;
+            color: var(--primary-green);
+            font-weight: 600;
+        }
+
+        .press-content {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .press-highlight {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .press-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .press-date {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .press-award {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary-gradient);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* 页脚 */
+        .footer {
+            background: var(--dark-bg);
+            padding: 3rem 5% 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-green);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 968px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                text-align: center;
+            }
+
+            .hero-image {
+                order: -1;
+            }
+
+            .hero-image img {
+                max-width: 80%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                min-height: auto;
+                padding: 3rem 5% 2rem;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .trust-badges {
+                flex-wrap: wrap;
+                gap: 1.5rem;
+                justify-content: center;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .calculator-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .device-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .hero-content {
+                gap: 2rem;
+            }
+
+            .hero-image img {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="navbar-content">
+            <div class="logo">ANKER SOLIX</div>
+            <ul class="nav-links">
+                <li><a href="#products">Products</a></li>
+                <li><a href="#calculator">Calculator</a></li>
+                <li><a href="#scenarios">Applications</a></li>
+                <li><a href="#support">Support</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero区 - 黑五促销 + 信任背书 -->
+    <section class="hero">
+        <div class="hero-content">
+            <!-- 左侧文字内容 -->
+            <div class="hero-text">
+                <span class="promo-badge">🔥 Black Friday | Nov 20-27</span>
+                <h1 class="hero-title">
+                    Save up to <span class="highlight">70% Off</span><br>
+                    Power Your Life with Confidence
+                </h1>
+                <p class="hero-subtitle">
+                    Anker SOLIX - Leading portable power solutions for outdoor adventures and emergency backup you can trust
+                </p>
+                <div class="hero-cta">
+                    <a href="#calculator" class="btn btn-primary">Find Your Power</a>
+                    <a href="#products" class="btn btn-secondary">Shop Now</a>
+                </div>
+
+                <!-- 信任背书 -->
+                <div class="trust-badges">
+                    <div class="trust-item">
+                        <div class="trust-number">3M+</div>
+                        <div class="trust-label">Global Users</div>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-number">4.8/5.0</div>
+                        <div class="trust-label">User Rating</div>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-number">100+</div>
+                        <div class="trust-label">Countries</div>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-number">10+</div>
+                        <div class="trust-label">Years Innovation</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 右侧图片内容 -->
+            <div class="hero-image">
+                <img src="hero-image.jpg" alt="Anker SOLIX Black Friday Sale - Portable Power Stations up to 70% Off">
+            </div>
+        </div>
+    </section>
+
+    <!-- 计算器模块 - 核心优化：前置到第2屏！ -->
+    <section id="calculator" class="calculator-section">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-badge">⚡ Smart Power Calculator</span>
+                <h2 class="section-title">Find Your Perfect Power Station in 30 Seconds</h2>
+                <p class="section-subtitle">
+                    Tell us your power needs, and we'll recommend the perfect power station for you
+                </p>
+            </div>
+
+            <div class="calculator-card">
+                <div class="calculator-step">
+                    <div class="step-label">
+                        <span class="step-number">1</span>
+                        Select the devices you need to power
+                    </div>
+                    <div class="device-grid">
+                        <div class="device-item" data-power="150" data-name="Refrigerator">
+                            <div class="device-icon">🧊</div>
+                            <div class="device-name">Fridge</div>
+                            <div class="device-power">~150W</div>
+                        </div>
+                        <div class="device-item" data-power="100" data-name="Laptop">
+                            <div class="device-icon">💻</div>
+                            <div class="device-name">Laptop</div>
+                            <div class="device-power">~100W</div>
+                        </div>
+                        <div class="device-item" data-power="50" data-name="Phone">
+                            <div class="device-icon">📱</div>
+                            <div class="device-name">Phone</div>
+                            <div class="device-power">~50W</div>
+                        </div>
+                        <div class="device-item" data-power="80" data-name="Light">
+                            <div class="device-icon">💡</div>
+                            <div class="device-name">Light</div>
+                            <div class="device-power">~80W</div>
+                        </div>
+                        <div class="device-item" data-power="1200" data-name="Electric Kettle">
+                            <div class="device-icon">☕</div>
+                            <div class="device-name">Kettle</div>
+                            <div class="device-power">~1200W</div>
+                        </div>
+                        <div class="device-item" data-power="500" data-name="Electric Fan">
+                            <div class="device-icon">🌀</div>
+                            <div class="device-name">Fan</div>
+                            <div class="device-power">~500W</div>
+                        </div>
+                        <div class="device-item" data-power="40" data-name="Router">
+                            <div class="device-icon">📡</div>
+                            <div class="device-name">Router</div>
+                            <div class="device-power">~40W</div>
+                        </div>
+                        <div class="device-item" data-power="200" data-name="Projector">
+                            <div class="device-icon">📽️</div>
+                            <div class="device-name">Projector</div>
+                            <div class="device-power">~200W</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calculator-step">
+                    <div class="step-label">
+                        <span class="step-number">2</span>
+                        Expected usage duration
+                    </div>
+                    <select id="duration" style="width: 100%; padding: 1rem; border-radius: 10px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.2); color: white; font-size: 1rem;">
+                        <option value="4">4 hours - Short trips</option>
+                        <option value="8" selected>8 hours - Daily use</option>
+                        <option value="12">12 hours - Extended backup</option>
+                        <option value="24">24 hours - Emergency backup</option>
+                        <option value="48">48 hours - Long journeys</option>
+                    </select>
+                </div>
+
+                <button class="btn btn-primary" onclick="calculatePower()" style="width: 100%; margin-top: 2rem;">
+                    💡 Calculate Recommendation
+                </button>
+
+                <div id="result" class="calculator-result">
+                    <div class="result-time" id="resultCapacity">2400Wh</div>
+                    <div class="result-label">Recommended Capacity</div>
+                    <p id="resultDesc">Based on your selected devices, we recommend:</p>
+                    <div class="result-recommendation">
+                        <div class="recommended-product" id="recommendedProduct">
+                            ⚡ Anker SOLIX C2000
+                        </div>
+                    </div>
+                    <button class="btn btn-secondary" onclick="window.location.href='#products'" style="margin-top: 1.5rem; background: rgba(255, 255, 255, 0.2);">
+                        View Details
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 产品推荐区 - 简化为3款核心产品 -->
+    <section id="products" class="products-section">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-badge">🔋 Core Product Series</span>
+                <h2 class="section-title">Crafted for Every Scenario</h2>
+                <p class="section-subtitle">
+                    From portable camping to home backup, there's a perfect match for you
+                </p>
+            </div>
+
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <span>🔋</span>
+                        <div class="product-badge">-40% OFF</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">C1000 Gen 2</h3>
+                        <p class="product-desc">Portable Essential - Perfect for Weekend Camping</p>
+                        <div class="product-specs">
+                            <div class="spec-item">
+                                <span class="spec-icon">⚡</span>
+                                <span>1056Wh Capacity</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-icon">🔌</span>
+                                <span>1800W Output</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-icon">⏱️</span>
+                                <span>43min Fast Charge</span>
+                            </div>
+                        </div>
+                        <div class="product-footer">
+                            <div>
+                                <span class="product-price">$599</span>
+                                <span class="price-original">$999</span>
+                            </div>
+                            <button class="btn btn-primary" style="padding: 0.75rem 1.5rem;">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <span>⚡</span>
+                        <div class="product-badge">-45% OFF 🔥</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">C2000 Gen 2</h3>
+                        <p class="product-desc">Balanced Performance - Multi-Scenario Universal</p>
+                        <div class="product-specs">
+                            <div class="spec-item">
+                                <span class="spec-icon">⚡</span>
+                                <span>2112Wh Capacity</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-icon">🔌</span>
+                                <span>2400W Output</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-icon">⏱️</span>
+                                <span>32hrs Fridge Power</span>
+                            </div>
+                        </div>
+                        <div class="product-footer">
+                            <div>
+                                <span class="product-price">$879</span>
+                                <span class="price-original">$1599</span>
+                            </div>
+                            <button class="btn btn-primary" style="padding: 0.75rem 1.5rem;">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <span>🏠</span>
+                        <div class="product-badge">-35% OFF</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">F3800 Plus</h3>
+                        <p class="product-desc">Home Backup Pro - 240V Plug & Play</p>
+                        <div class="product-specs">
+                            <div class="spec-item">
+                                <span class="spec-icon">⚡</span>
+                                <span>3840Wh Capacity</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-icon">🔌</span>
+                                <span>6000W Output</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-icon">🏠</span>
+                                <span>Whole Home Backup</span>
+                            </div>
+                        </div>
+                        <div class="product-footer">
+                            <div>
+                                <span class="product-price">$2,599</span>
+                                <span class="price-original">$3,999</span>
+                            </div>
+                            <button class="btn btn-primary" style="padding: 0.75rem 1.5rem;">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 场景应用区 - 前置优化 -->
+    <section id="scenarios" class="scenarios-section">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-badge">🌍 Application Scenarios</span>
+                <h2 class="section-title">Reliable Power, Anytime, Anywhere</h2>
+                <p class="section-subtitle">
+                    Discover how Anker SOLIX powers your lifestyle
+                </p>
+            </div>
+
+            <div class="scenarios-grid">
+                <div class="scenario-card">
+                    <div class="scenario-bg"></div>
+                    <div class="scenario-content">
+                        <div class="scenario-icon">🏕️</div>
+                        <h3 class="scenario-title">Outdoor Camping</h3>
+                        <p class="scenario-desc">
+                            Power your camping gear and enjoy the peace and comfort of the wilderness
+                        </p>
+                        <a href="#" class="scenario-link">
+                            Learn More →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="scenario-card">
+                    <div class="scenario-bg"></div>
+                    <div class="scenario-content">
+                        <div class="scenario-icon">🚐</div>
+                        <h3 class="scenario-title">RV Living</h3>
+                        <p class="scenario-desc">
+                            Provide lasting power for your mobile home, explore the world freely
+                        </p>
+                        <a href="#" class="scenario-link">
+                            Learn More →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="scenario-card">
+                    <div class="scenario-bg"></div>
+                    <div class="scenario-content">
+                        <div class="scenario-icon">🏠</div>
+                        <h3 class="scenario-title">Home Backup</h3>
+                        <p class="scenario-desc">
+                            Handle sudden power outages and keep your home devices running
+                        </p>
+                        <a href="#" class="scenario-link">
+                            Learn More →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 品牌优势 -->
+    <section class="features-section">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-badge">✨ Why Choose SOLIX</span>
+                <h2 class="section-title">Leading Technology, Trusted Quality</h2>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🔋</div>
+                    <h3 class="feature-title">LiFePO4 Battery</h3>
+                    <p class="feature-desc">
+                        3000+ cycle life, more durable and safer than traditional batteries
+                    </p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Fast Charging</h3>
+                    <p class="feature-desc">
+                        Fully charged in as fast as 43 minutes, don't let waiting stop your plans
+                    </p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📱</div>
+                    <h3 class="feature-title">Smart App Control</h3>
+                    <p class="feature-desc">
+                        Real-time power monitoring and remote control, everything at your fingertips
+                    </p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🔌</div>
+                    <h3 class="feature-title">Multiple Outputs</h3>
+                    <p class="feature-desc">
+                        AC/DC/USB-C ports, power multiple devices simultaneously
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PR背书 -->
+    <section class="press-section">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-badge">📺 Media Coverage & Awards</span>
+                <h2 class="section-title">Trusted by Industry Leaders</h2>
+                <p class="section-subtitle">
+                    Recognition from renowned global media, authorities, and industry experts
+                </p>
+            </div>
+
+            <div class="press-grid">
+                <div class="press-card">
+                    <div class="press-header">
+                        <div class="press-logo">📱</div>
+                        <div class="press-info">
+                            <div class="press-source">Tech Daily</div>
+                            <div class="press-type">Authoritative Media</div>
+                        </div>
+                    </div>
+                    <p class="press-content">
+                        "<span class="press-highlight">Anker SOLIX leads the new era of portable energy storage</span>, its innovative LiFePO4 battery technology and fast charging solutions set new industry benchmarks, representing China's technological breakthrough in the global energy storage market."
+                    </p>
+                    <div class="press-footer">
+                        <span class="press-date">October 2024</span>
+                        <span class="press-award">🏆 Technology Innovation Award</span>
+                    </div>
+                </div>
+
+                <div class="press-card">
+                    <div class="press-header">
+                        <div class="press-logo">🎬</div>
+                        <div class="press-info">
+                            <div class="press-source">TechCrunch</div>
+                            <div class="press-type">International Tech Media</div>
+                        </div>
+                    </div>
+                    <p class="press-content">
+                        "Anker SOLIX C2000 delivers <span class="press-highlight">exceptional performance and reliability</span> in portable power solutions. The 43-minute fast charging is a game-changer for outdoor enthusiasts and emergency preparedness."
+                    </p>
+                    <div class="press-footer">
+                        <span class="press-date">2024年9月</span>
+                        <span class="press-award">⭐ Editor's Choice</span>
+                    </div>
+                </div>
+
+                <div class="press-card">
+                    <div class="press-header">
+                        <div class="press-logo">🏅</div>
+                        <div class="press-info">
+                            <div class="press-source">CES 2024</div>
+                            <div class="press-type">Consumer Electronics Show</div>
+                        </div>
+                    </div>
+                    <p class="press-content">
+                        "<span class="press-highlight">Best Portable Power Product of 2024</span>, Anker SOLIX series won the CES Innovation Award with its exceptional safety performance, ultra-fast charging technology and user-centric design, demonstrating its leading position in the global market."
+                    </p>
+                    <div class="press-footer">
+                        <span class="press-date">January 2024</span>
+                        <span class="press-award">🏆 CES Innovation Award</span>
+                    </div>
+                </div>
+
+                <div class="press-card">
+                    <div class="press-header">
+                        <div class="press-logo">🔋</div>
+                        <div class="press-info">
+                            <div class="press-source">IEEE Battery Tech Society</div>
+                            <div class="press-type">Industry Authority Certification</div>
+                        </div>
+                    </div>
+                    <p class="press-content">
+                        "After rigorous safety and performance testing, <span class="press-highlight">Anker SOLIX meets UL2089, FCC, CE and multiple international certification standards</span>, its LiFePO4 battery technology excels in cycle life and thermal stability."
+                    </p>
+                    <div class="press-footer">
+                        <span class="press-date">August 2024</span>
+                        <span class="press-award">✅ International Safety Certified</span>
+                    </div>
+                </div>
+
+                <div class="press-card">
+                    <div class="press-header">
+                        <div class="press-logo">🎥</div>
+                        <div class="press-info">
+                            <div class="press-source">GeekPark</div>
+                            <div class="press-type">Tech Review</div>
+                        </div>
+                    </div>
+                    <p class="press-content">
+                        "In a comprehensive 30-day field test, <span class="press-highlight">Anker SOLIX C2000 delivered outstanding performance</span>, providing stable and reliable power support across camping, RV living, and emergency backup scenarios. It's the benchmark product in today's market."
+                    </p>
+                    <div class="press-footer">
+                        <span class="press-date">November 2024</span>
+                        <span class="press-award">🌟 Annual Recommendation</span>
+                    </div>
+                </div>
+
+                <div class="press-card">
+                    <div class="press-header">
+                        <div class="press-logo">🌍</div>
+                        <div class="press-info">
+                            <div class="press-source">Global Energy Storage Alliance</div>
+                            <div class="press-type">Industry Recognition</div>
+                        </div>
+                    </div>
+                    <p class="press-content">
+                        "Anker SOLIX has made outstanding contributions to <span class="press-highlight">promoting clean energy adoption and energy storage technology innovation</span>, with product sales and customer satisfaction ranking among the top in the global portable energy storage market."
+                    </p>
+                    <div class="press-footer">
+                        <span class="press-date">June 2024</span>
+                        <span class="press-award">🏆 Industry Contribution Award</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Products</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Portable Power</a></li>
+                    <li><a href="#">Solar Panels</a></li>
+                    <li><a href="#">Home Backup</a></li>
+                    <li><a href="#">Accessories</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Product Registration</a></li>
+                    <li><a href="#">Warranty Policy</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>About</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Company</a></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Partners</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Anker SOLIX. All rights reserved. | Privacy Policy | Terms of Use</p>
+        </div>
+    </footer>
+
+    <script>
+        // 计算器功能
+        let selectedDevices = [];
+
+        document.querySelectorAll('.device-item').forEach(item => {
+            item.addEventListener('click', function() {
+                this.classList.toggle('selected');
+            });
+        });
+
+        function calculatePower() {
+            const selected = document.querySelectorAll('.device-item.selected');
+            const duration = parseInt(document.getElementById('duration').value);
+
+            if (selected.length === 0) {
+                alert('Please select at least one device');
+                return;
+            }
+
+            let totalPower = 0;
+            let deviceNames = [];
+
+            selected.forEach(device => {
+                totalPower += parseInt(device.dataset.power);
+                deviceNames.push(device.dataset.name);
+            });
+
+            const requiredCapacity = Math.ceil((totalPower * duration) / 1000) * 1000;
+
+            let recommendedProduct = '';
+            if (requiredCapacity <= 1100) {
+                recommendedProduct = '⚡ Anker SOLIX C1000 Gen 2';
+            } else if (requiredCapacity <= 2200) {
+                recommendedProduct = '⚡ Anker SOLIX C2000 Gen 2';
+            } else {
+                recommendedProduct = '⚡ Anker SOLIX F3800 Plus';
+            }
+
+            document.getElementById('resultCapacity').textContent = requiredCapacity + 'Wh';
+            document.getElementById('resultDesc').textContent =
+                `To power ${deviceNames.join(', ')} for ${duration} hours, you need approximately ${requiredCapacity}Wh capacity`;
+            document.getElementById('recommendedProduct').textContent = recommendedProduct;
+            document.getElementById('result').classList.add('show');
+
+            // 平滑滚动到结果
+            document.getElementById('result').scrollIntoView({
+                behavior: 'smooth',
+                block: 'nearest'
+            });
+        }
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
